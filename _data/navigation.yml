@@ -1,19 +1,19 @@
 # Site navigation links
 
+- title: Home
+  url: /
+
 - title: About
   url: /about/
 
-- title: Articles
-  url: /articles/
+- title: Archives
+  url: /archives/
 
-- title: Blog
-  url: /blog/
+- title: Tags
+  url: /tags/
 
-- title: Theme Setup
-  url: /theme-setup/
-
-- title: Made Mistakes
-  url: http://mademistakes.com
+- title: Contact
+  url: /contact/
 
 - title: Search
   url: /search/
