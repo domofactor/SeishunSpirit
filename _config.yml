@@ -11,7 +11,7 @@ search: true
 
 permalink:   /:title/
 markdown:    kramdown
-highlighter: rouge
+highlighter: pygments
 sass:
   sass_dir: _sass
   style: compressed
