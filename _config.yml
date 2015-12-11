@@ -2,7 +2,7 @@
 
 title: DomoFactor
 locale: en_US
-description: "Personal blog of Terrell Broomer"
+description: ""
 #logo:
 search: true
 #url: http://domofactor.com
@@ -34,12 +34,12 @@ exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.
 # Site owner
 owner:
   name: Terrell Broomer
-  avatar: bio-photo.jpg
+  avatar: terrell_profile.jpg
   email:
   disqus-shortname: domofactor
   twitter: domofactor
   facebook: #username
-  github: #username
+  github: domofactor
   stackexchange: #http://stackoverflow.com/users/123456/username
   linkedin: terrellbroomer
   instagram: domofactor
