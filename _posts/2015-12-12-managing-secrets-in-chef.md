@@ -57,17 +57,15 @@ They guys over at Opscode(Chef) attempt to solve the key management problem of r
 ##How does Chef Vault work?
 When a chef client first registers with the chef server, it creates authentication using a private/public keypair. After registration, the public key is copied over to the Chef Server for subsequent uses when running Chef Client.
 
-Chef Vault Encrypts the data it using the client's public key. Then, each client decrypts by using its own private key.
+Chef Vault encrypts the data it using the client's public key. Then, each client decrypts by using its own private key.
 
 ##What is bad with Chef Vault?
-This overall seems like a gread solution, since it takes some pieces that Chef already has been using, and helps solve the key management problem. However, there are 2 main issue with Chef Vault.
+This overall seems like a gread solution, since it takes some pieces that Chef already has been using and helps solve the key management problem. However, in my opinion there are 2 main issue with Chef Vault.
 
 ###1. Scaling
 If I have 2 clients, then encrypt my databag using their public keys. Both of my clients are happy and can decrypt with no issues.
 
-However, if I add a 3rd client, it wasn't around when I originally encryped the JSON data. so, that client won't be able to decrypt properly.
-
-To fix this, now we need to re-encrypt the databag to allow the 3rd client to successfully decrypt the data.
+However, if I add a 3rd client that wasnt around when I originally encryped the JSON data. That client won't be able to decrypt properly. So, now we need to re-encrypt the databag to allow the 3rd client to successfully decrypt the data.
 
 ###2. Least Privilege
 If you have more than one databag, all of a sudden you have one keypair encrypting/decrypting multiple databags.

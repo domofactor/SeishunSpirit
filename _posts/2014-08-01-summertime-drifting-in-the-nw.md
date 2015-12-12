@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Summertime Drifting In The PacificNW
+title: Summertime Drifting In The NW
 tags: [s13,180sx,240sx,typex,midnightpurple,nissan,parc,drift,evd,evergreen,summer,pacificnw]
 categories: [Cars]
 excerpt: 'Taking in those warm summer rays and sweet tire smoke!'
