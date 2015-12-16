@@ -16,6 +16,7 @@ comments: true
 share: true
 ---
 
+
 When I first started cooking with Chef, I was curious about built-in solutions for dealing with secret stuff like passwords and keys. Turns out, there are two options, Encrypted Databags and Chef Vault. 
 
 After poking around, I was basically told by my DevOps Teammate:
@@ -32,10 +33,12 @@ Databags are variables that get stored on the Chef Server as JSON data.
 ###Symmetric Encryption
 Uses the same key to both Encrypt and Decrypt your secret
 ![](http://media.packetlife.net/media/blog/attachments/512/symmetric_encryption.png)
+*Image from packetlife.net*
 
 ###Asymmetric Encryption
 Uses 2 seperate keys. The public key is used to encrypt the secret and a private key to decrypt the secret.
 ![](http://media.packetlife.net/media/blog/attachments/511/asymmetric_encryption.png)
+*Image from packetlife.net*
 
 ##What are encrypted databags?
 Databags that are encrypted using Asymmetric encryption so your secrets can be stored in version control(Github, Bitbucket, ect) safely.
@@ -43,10 +46,10 @@ Databags that are encrypted using Asymmetric encryption so your secrets can be s
 ##How do encypted databags Work?
 Now that we have a basic understanding of things, lets walkthrough how encrypted databags work.
 
-In a typical setup, you have a Chef Server and a Chef Client.
-"picture of chef server and client"
+In a typical setup, you have a Chef Server and a Chef Client. A public key is used to encrypt the databag so it can be stored in version control, and a separate private key is used by the Chef Client to decrypt the databag.
+![encrypted_databag.jpg]({{site.baseurl}}/_posts/encrypted_databag.jpg)
 
-A public key is used to encrypt the databag so it can be stored in version control, and a separate private key is used by the Chef Client to decrypt the databag.
+
 
 ##What is bad with encrypted databags?
 This seems like a pretty simple plan, but now you just turned your encryption issue into a key management one. How will we manage N number of keys for all of our databags and clients? What is the workflow like is one of our keys gets comprimised and we need to rotate when across N number of clients? 
@@ -97,4 +100,3 @@ file '/etc/secret' do
   action :create
 end
 {% endhighlight %}
-
