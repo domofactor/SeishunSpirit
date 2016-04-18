@@ -51,7 +51,7 @@ This seems like a pretty simple plan, but now you just turned your encryption is
 The guys over at Nordstrom attempt to solve the key management problem by using Chef Vault. When a chef client first registers with the chef server, it creates authentication using a private/public keypair. After registration, the public key is copied over to the Chef Server for subsequent uses when running Chef Client. Data in Chef Vault is encrypted using the client's public key. Then, each client decrypts by using its own private key.
 
 ## What is bad with Chef Vault?
-This overall seems like a gread solution, since it takes some pieces that Chef already has been using and helps solve the key management problem. However, in my opinion there are 2 main issue with Chef Vault.
+This overall seems like a great solution, since it takes some pieces that Chef already has been using and helps solve the key management problem. However, in my opinion there are 2 main issue with Chef Vault.
 
 ### 1. Scaling
 If I have 2 clients, then encrypt my databag using their public keys. Both of my clients are happy and can decrypt with no issues.
